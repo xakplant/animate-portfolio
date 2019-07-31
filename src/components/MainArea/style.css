@@ -1,0 +1,19 @@
+.mainarea{
+    opacity: 0;
+    height: 100vh;
+}
+.mainarea.visible{
+    opacity: 1;
+    animation: 2s show-area;
+}
+@keyframes show-area{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.mainarea__row{
+    height: 100%;
+}

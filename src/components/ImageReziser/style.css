@@ -1,0 +1,44 @@
+:root{
+    --imageresizer-line-height: 2.5rem;
+    --imageresizer-top-items-c: calc( (var(--imageresizer-line-height) / 2) - 1rem );
+    --imageresizer-horizont-rythm: 15px;
+    --imageresizer-vertical-rythm: 1rem;
+    --imageresizer-horizont-rythm-half: 0.5rem;
+    --imageresizer-border-color: #444444;
+    --imageresizer-border-color-muted: #44444450;
+    --imageresizer-border-wedth: 0.5px;
+    --imageresizer-border: solid var(--imageresizer-border-wedth) var(--imageresizer-border-color);
+    --imageresizer-paginate-border-redius: 0.2rem;
+    --imageresizer-text-color: #222222;
+    --imageresizer-text-active-color: #ffffff;
+}
+.imgcrop-area{
+    height: 100vh;
+    overflow: scroll;
+    position: relative;
+}
+.imageresizer__input{
+    line-height: var(--imageresizer-line-height);
+    border: var(--imageresizer-border);
+    border-radius: var(--imageresizer-paginate-border-redius);
+    margin-bottom: var(--imageresizer-horizont-rythm-half); 
+}
+::-ms-browse {
+    background: var(--imageresizer-border-color);
+    color: var(--imageresizer-text-active-color);
+    border: none;
+}
+::-webkit-file-upload-button {
+    background: var(--imageresizer-border-color);
+    color: var(--imageresizer-text-active-color);
+    border: none;
+}
+.imageresizer__buttom{
+    line-height: var(--imageresizer-line-height);
+    border: var(--imageresizer-border);
+    border-radius: var(--imageresizer-paginate-border-redius);
+    margin-left: var(--imageresizer-paginate-border-redius);
+    margin-right: var(--imageresizer-paginate-border-redius);
+    background: var(--imageresizer-border-color);
+    color: var(--imageresizer-text-active-color);
+}
