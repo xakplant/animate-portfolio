@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, lazy } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
 import Sidebar from '../Siebar/Sidebar';
+import PageCover from '../PageCover/PageCover';
 import './style.css';
-import DataTable from '../DataTable/DataTable';
-import ImageResizer from '../ImageReziser/ImageResizer';
 
-
+const CalcStrLenght = lazy(()=>(import('../CalcStrLenght/CalcStrLenght')));
+const StringsComponent = lazy(()=>(import('../StringsComponent/StringsComponent')));
 
 export default class MainArea extends Component{
     constructor(props){
@@ -19,14 +19,18 @@ export default class MainArea extends Component{
     render(){
         return(
             <Container ref={this.containerRef} className="mainarea" fluid={true}>
-                <Row className="mainarea__row">                                       
+                <Row className="mainarea__row">                                                        
                     <Router>
-                    <Sidebar/> 
+                        <Sidebar/> 
                         <Switch>
-                            <Route exact path='/' component={(()=>(<DataTable/>))} />
-                            <Route path='/image-crop' component={(()=>(<ImageResizer/>))} />
+                            <PageCover>   
+                                <Route exact path='/' component={(()=>(<div><h1>Главная</h1></div>))} />
+                                <Route path='/calc-str-lenght' component={(()=>(<CalcStrLenght/>))} />
+                                <Route path='/strings' component={(()=>(<StringsComponent/>))} />
+                                
+                            </PageCover>
                         </Switch>
-                    </Router>
+                    </Router>                    
                 </Row>
             </Container>
         );

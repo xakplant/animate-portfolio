@@ -7,13 +7,17 @@ import './style.css';
 
 const links = [
     {
-        title:"DataTable",
+        title:"Главная страница",
         href:"/",
     },
     {
-        title:"ImageCrop",
-        href:"/image-crop",
+        title:"Длинна строки",
+        href:"/calc-str-lenght",
     },
+    {
+        title:"Строки",
+        href:"/strings"
+    }
 ];
 
 function CreateNav(){
@@ -31,10 +35,6 @@ function CreateNav(){
 }
 
 class Sidebar extends Component{
-    constructor(props){
-        super(props);
-
-    }
     render(){
         return(
             <Col className="sidebar" sm={3}>
