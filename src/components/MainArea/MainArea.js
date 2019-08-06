@@ -7,6 +7,7 @@ import './style.css';
 
 const CalcStrLenght = lazy(()=>(import('../CalcStrLenght/CalcStrLenght')));
 const StringsComponent = lazy(()=>(import('../StringsComponent/StringsComponent')));
+const CapsNormalize = lazy(()=>(import('../CapsNormalize/CapsNormalize')));
 
 export default class MainArea extends Component{
     constructor(props){
@@ -27,7 +28,7 @@ export default class MainArea extends Component{
                                 <Route exact path='/' component={(()=>(<div><h1>Главная</h1></div>))} />
                                 <Route path='/calc-str-lenght' component={(()=>(<CalcStrLenght/>))} />
                                 <Route path='/strings' component={(()=>(<StringsComponent/>))} />
-                                
+                                <Route path='/caps-normalize' component={(()=>(<CapsNormalize/>))}/>
                             </PageCover>
                         </Switch>
                     </Router>                    

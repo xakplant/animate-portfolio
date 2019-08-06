@@ -17,6 +17,10 @@ const links = [
     {
         title:"Строки",
         href:"/strings"
+    },
+    {
+        title:"Нормализация из КАПСА",
+        href: "/caps-normalize"
     }
 ];
 

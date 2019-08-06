@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "XakPlant tools",
+  "name": "XakPlant, инструменты для работы с контентом",
   "icons": [
     {
       "src": "favicon.ico",
