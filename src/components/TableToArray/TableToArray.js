@@ -50,7 +50,7 @@ export default class TableToArray extends Component{
     render(){
         return(
             <div>
-                <h1>Нормализация текста из капса</h1>
+                <h1>Из таблицы в массив</h1>
                 <div className="form-group">
                     <label>Введите сюда текст</label>
                     <textarea 
