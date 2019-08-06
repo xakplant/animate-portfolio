@@ -21,6 +21,10 @@ const links = [
     {
         title:"Нормализация из КАПСА",
         href: "/caps-normalize"
+    },
+    {
+        title:"Из таблицы в массив",
+        href: "/table-to-array"
     }
 ];
 
