@@ -1,57 +1,48 @@
-
 import React, { Component } from 'react';
 
 
 
-const tableToArray = (string)=>{
-    const arr = string.split(/\n/);
-   
+const tableToObjectsArray = (string)=>{
+    const arr = string.split(/\n/); 
+    let result = [];
+    arr.pop();
     arr.map((a, i, arr)=>{
-      arr[i] = a.split(/\t/);
+    arr[i] = a.split(/\t/);
+    }); 
+    if(arr.length > 1){  
+    const firstRow = arr[0];
+    const dataRows = arr.slice(1);
+
+
+    dataRows.map((item)=>{
+        const obj = {};
+        item.map((element, index, a)=>{
+        obj[firstRow[index]] = element;
+        });
+        result.push(obj);
     });
-    //console.log(arr);
-    let value = "[";
-    value += "\n";
-    arr.map((it, ii, arrr)=>{
-      it.map((a, i, arr)=>{
-        if(i === 0){
-          value += "\t";
-          value += "[";        
-        }
-        value += a;
-        if(i !== (arr.length - 1)){
-          value += ", ";
-        }
-        if(i === (arr.length - 1)){
-          value += "]";
-        }
-      })
-      if(ii !== (arrr.length - 1)){
-        value += ",";
-        value += "\n";
-      }
-    });
-    
-    value += "\n";
-    value +="]";
-    return value;
-  }
+
+    const resultString = JSON.stringify(JSON.parse(JSON.stringify(result)),null,2);
+    return resultString;
+    } 
+    return '';
+}
 
 
 
-export default class TableToArray extends Component{
+export default class TableToObjectsArray extends Component{
     constructor(props){
         super(props);
         this.handleInput = this.handleInput.bind(this);
         this.resultRef = React.createRef();
     }
     handleInput(event){        
-        this.resultRef.current.value = tableToArray(event.target.value);
+        this.resultRef.current.value = tableToObjectsArray(event.target.value);
     }
     render(){
         return(
             <div>
-                <h1>Из таблицы в массив</h1>
+                <h1>Из таблицы в массив объектов</h1>
                 <div className="form-group">
                     <label>Введите сюда текст</label>
                     <textarea 
@@ -75,19 +66,19 @@ export default class TableToArray extends Component{
                 </div>
                 <h2>Описание</h2>
                 <p>
-                    Преобразование таблицы в массив
+                    Преобразование таблицы в массив объектов
                 </p>
                 <h2>Пример</h2>
                 <div className="row">
-                    <div className="col">
+                    <div className="col-6">
                     <h4 class="lead text-center">Ввод</h4>
                         <table className="table">
                             <tbody>
                                 <tr>
-                                    <td>5</td>
-                                    <td>6</td>
-                                    <td>7</td>
-                                    <td>8</td>
+                                    <td>Заголовок 1</td>
+                                    <td>Заголовок2</td>
+                                    <td>Заголово3</td>
+                                    <td>Заголовок4</td>
                                 </tr>
                                 <tr>
                                     <td>4</td>
@@ -104,15 +95,13 @@ export default class TableToArray extends Component{
                             </tbody>
                         </table>
                     </div>
-                    <div className="col">
+                    <div className="col-6">
                     <h4 className="lead text-center">Результат</h4>
-                    <pre className="code">
-                    [ <br/>
-                        &nbsp; [5, 6, 7, 8], <br/>
-                        &nbsp; [4, 3, 15, 7], <br/>
-                        &nbsp; [22, 19, 11, 43] <br/>
-                    ]      
-                    </pre>
+                    <div readOnly className="code">
+                            {
+                                ("[{\"Заголовок 1\": \"4\",\"Заголовок2\": \"3\",\"Заголово3\": \"15\",\"Заголовок4\": \"7\"},{\"Заголовок 1\": \"22\",\"Заголовок2\": \"19\",\"Заголово3\": \"11\",\"Заголовок4\": \"43\"}]")
+                            }
+                    </div>
                    </div>
                 </div>
             </div>

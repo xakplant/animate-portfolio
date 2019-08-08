@@ -25,6 +25,10 @@ const links = [
     {
         title:"Из таблицы в массив",
         href: "/table-to-array"
+    },
+    {
+        title:"Из таблицы в массив объектов",
+        href: "/table-to-objects-array"
     }
 ];
 

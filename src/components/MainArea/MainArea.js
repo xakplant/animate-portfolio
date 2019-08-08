@@ -9,6 +9,7 @@ const CalcStrLenght = lazy(()=>(import('../CalcStrLenght/CalcStrLenght')));
 const StringsComponent = lazy(()=>(import('../StringsComponent/StringsComponent')));
 const CapsNormalize = lazy(()=>(import('../CapsNormalize/CapsNormalize')));
 const TableToArray = lazy(()=>(import('../TableToArray/TableToArray')));
+const TableToObjectsArray = lazy(()=>(import('../TableToObjectsArray/TableToObjectsArray')));
 
 export default class MainArea extends Component{
     constructor(props){
@@ -31,6 +32,7 @@ export default class MainArea extends Component{
                                 <Route path='/strings' component={(()=>(<StringsComponent/>))} />
                                 <Route path='/caps-normalize' component={(()=>(<CapsNormalize/>))}/>
                                 <Route path='/table-to-array' component={(()=>(<TableToArray/>))}/>
+                                <Route path='/table-to-objects-array' component={(()=>(<TableToObjectsArray/>))}/>
                             </PageCover>
                         </Switch>
                     </Router>                    
