@@ -5,7 +5,7 @@ import escape from 'lodash.escape';
 const tableToObjectsArray = (string)=>{
     const arr = string.split(/\n/); 
     let result = [];
-    arr.pop();
+    //arr.pop();
     arr.map((a, i, arr)=>{
         arr[i] = a.split(/\t/);
         return a;
@@ -18,8 +18,8 @@ const tableToObjectsArray = (string)=>{
     dataRows.map((item)=>{
             const obj = {};
             item.map((element, index, a)=>{
-            obj[firstRow[index]] = escape(element).replace('\\', '\\\\');
-            return item;
+            obj[firstRow[index]] = escape(element);
+            return element;
         });
         result.push(obj);
         return obj;
