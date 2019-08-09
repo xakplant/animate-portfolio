@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Badge, Col, Row, Table } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 export default class StringsComponent extends Component{
     constructor(props){

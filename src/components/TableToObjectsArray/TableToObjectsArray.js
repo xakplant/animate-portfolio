@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import escape from 'lodash.escape';
 
 
 const tableToObjectsArray = (string)=>{
@@ -7,7 +7,8 @@ const tableToObjectsArray = (string)=>{
     let result = [];
     arr.pop();
     arr.map((a, i, arr)=>{
-    arr[i] = a.split(/\t/);
+        arr[i] = a.split(/\t/);
+        return a;
     }); 
     if(arr.length > 1){  
     const firstRow = arr[0];
@@ -15,11 +16,13 @@ const tableToObjectsArray = (string)=>{
 
 
     dataRows.map((item)=>{
-        const obj = {};
-        item.map((element, index, a)=>{
-        obj[firstRow[index]] = element;
+            const obj = {};
+            item.map((element, index, a)=>{
+            obj[firstRow[index]] = escape(element).replace('\\', '\\\\');
+            return item;
         });
         result.push(obj);
+        return obj;
     });
 
     const resultString = JSON.stringify(JSON.parse(JSON.stringify(result)),null,2);
@@ -71,7 +74,7 @@ export default class TableToObjectsArray extends Component{
                 <h2>Пример</h2>
                 <div className="row">
                     <div className="col-6">
-                    <h4 class="lead text-center">Ввод</h4>
+                    <h4 className="lead text-center">Ввод</h4>
                         <table className="table">
                             <tbody>
                                 <tr>

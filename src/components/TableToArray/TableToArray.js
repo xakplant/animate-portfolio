@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import escape from 'lodash.escape';
 
 
 
@@ -8,6 +9,7 @@ const tableToArray = (string)=>{
    
     arr.map((a, i, arr)=>{
       arr[i] = a.split(/\t/);
+      return a;
     });
     //console.log(arr);
     let value = "[";
@@ -18,18 +20,20 @@ const tableToArray = (string)=>{
           value += "\t";
           value += "[";        
         }
-        value += a;
+        value += '"'+escape(a).replace('\\', '\\\\')+'"';
         if(i !== (arr.length - 1)){
           value += ", ";
         }
         if(i === (arr.length - 1)){
           value += "]";
         }
+        return a;
       })
       if(ii !== (arrr.length - 1)){
         value += ",";
         value += "\n";
       }
+      return value;
     });
     
     value += "\n";
@@ -80,7 +84,7 @@ export default class TableToArray extends Component{
                 <h2>Пример</h2>
                 <div className="row">
                     <div className="col">
-                    <h4 class="lead text-center">Ввод</h4>
+                    <h4 className="lead text-center">Ввод</h4>
                         <table className="table">
                             <tbody>
                                 <tr>

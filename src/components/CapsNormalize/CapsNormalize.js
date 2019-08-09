@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-const isString = (char)=>(/\w/.test(char));
-
 
 const normalizeText = (string)=>{
     const attPrdl = string.split('. ');
@@ -13,6 +11,7 @@ const normalizeText = (string)=>{
             newI = newI + concat
             newString += newI;
         }
+        return s;
     });
     return newString
   }
