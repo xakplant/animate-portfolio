@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import escape from 'lodash.escape';
+import Helmet from "react-helmet";
 
 
 
@@ -55,6 +56,14 @@ export default class TableToArray extends Component{
     render(){
         return(
             <div>
+                <Helmet>
+                    <title>Сделать из таблицы массив массивов онлайн</title>
+                    <meta 
+                        name="description" 
+                        content="Инструмент для преобразования таблицы в массив массивов онлайн. 
+                        Полезен для представления данных js-библиотекам типа DataTable или обрабтки с помощью PHP. Заходите!" 
+                    />
+                </Helmet>
                 <h1>Из таблицы в массив</h1>
                 <div className="form-group">
                     <label>Введите сюда текст</label>

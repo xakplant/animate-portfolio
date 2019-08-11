@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import escape from 'lodash.escape';
+import Helmet from "react-helmet";
 
 
 const tableToObjectsArray = (string)=>{
@@ -45,6 +46,13 @@ export default class TableToObjectsArray extends Component{
     render(){
         return(
             <div>
+                <Helmet>
+                    <title>Сделать из таблицы массив объектов онлайн</title>
+                    <meta 
+                        name="description" 
+                        content="Инструмент для преобразования таблицы в массив объектов. Создаёт валидный JSON с экранированным HTML. Заходите!" 
+                    />
+                </Helmet>
                 <h1>Из таблицы в массив объектов</h1>
                 <div className="form-group">
                     <label>Введите сюда текст</label>

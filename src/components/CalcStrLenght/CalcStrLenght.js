@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Badge } from 'react-bootstrap';
+import Helmet from 'react-helmet';
+
 
 export default class CalcStrLenght extends Component{
     constructor(props){
@@ -26,6 +28,10 @@ export default class CalcStrLenght extends Component{
         } = this.state;
         return(
             <div>
+                <Helmet>
+                    <title>Посчитать длину строки, количество слов онлайн</title>
+                    <meta name="description" content="Посчитать длину текста онлайн. Также вы можете посчитать количество слов онлайн. Заходите!" />
+                </Helmet>
                 <h1>Подсчёт количества символов в тексте</h1>
                 <div className="form-group">
                     <label>Введите сюда текст</label>
