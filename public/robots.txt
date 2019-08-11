@@ -1,0 +1,12 @@
+
+User-agent: *
+Allow: /
+Allow: /calc-str-lenght
+Allow: /strings
+Allow: /caps-normalize        
+Allow: /table-to-array
+Allow: /table-to-objects-array
+Allow: /html-screen
+Disallow: /static/
+
+host: https://tools.xakplant.ru

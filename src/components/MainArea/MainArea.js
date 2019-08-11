@@ -11,6 +11,7 @@ const StringsComponent = lazy(()=>(import('../StringsComponent/StringsComponent'
 const CapsNormalize = lazy(()=>(import('../CapsNormalize/CapsNormalize')));
 const TableToArray = lazy(()=>(import('../TableToArray/TableToArray')));
 const TableToObjectsArray = lazy(()=>(import('../TableToObjectsArray/TableToObjectsArray')));
+const HtmlScreen = lazy(()=>(import('../HtmlScreen/HtmlScreen'))); 
 
 export default class MainArea extends Component{
     constructor(props){
@@ -53,6 +54,7 @@ export default class MainArea extends Component{
                                 <Route path='/caps-normalize' component={(()=>(<CapsNormalize/>))}/>
                                 <Route path='/table-to-array' component={(()=>(<TableToArray/>))}/>
                                 <Route path='/table-to-objects-array' component={(()=>(<TableToObjectsArray/>))}/>
+                                <Route path='/html-screen' component={(()=>(<HtmlScreen/>))}/>
                             </PageCover>
                         </Switch>
                     </Router>                    

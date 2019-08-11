@@ -29,6 +29,10 @@ const links = [
     {
         title:"Из таблицы в массив объектов",
         href: "/table-to-objects-array"
+    },
+    {
+        title: "Экранирование html-онлайн",
+        href: "/html-screen"
     }
 ];
 
