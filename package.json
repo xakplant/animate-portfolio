@@ -13,6 +13,7 @@
     "history": "^4.9.0",
     "jquery": "^3.4.1",
     "lodash.escape": "^4.0.1",
+    "lodash.unescape": "^4.0.1",
     "puppeteer": "^1.19.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.10",
