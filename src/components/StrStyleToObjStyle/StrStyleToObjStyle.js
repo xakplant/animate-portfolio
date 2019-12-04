@@ -40,7 +40,7 @@ export default class StrStyleToObjStyle extends Component{
     }
 
     handleOnChange = (value) =>{
-        const result = JSON.stringify(xakplStyleStringToStyleObject(value));
+        const result = JSON.stringify(xakplStyleStringToStyleObject(value)).replace(/"/g, '');
         this.setState({value: result});
     }
 
