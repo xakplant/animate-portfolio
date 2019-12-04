@@ -33,6 +33,10 @@ const links = [
     {
         title: "Экранирование html-онлайн",
         href: "/html-screen"
+    },
+    {
+        title: "Переменная в camelCase",
+        href: "/variables-to-camelCase"
     }
 ];
 
