@@ -37,6 +37,10 @@ const links = [
     {
         title: "Переменная в camelCase",
         href: "/variables-to-camelCase"
+    },
+    {
+        title: "Строка стилей в объект стилей",
+        href: "/str-style-to-obj-style"
     }
 ];
 

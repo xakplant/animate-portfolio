@@ -13,6 +13,7 @@ const TableToArray = lazy(()=>(import('../TableToArray/TableToArray')));
 const TableToObjectsArray = lazy(()=>(import('../TableToObjectsArray/TableToObjectsArray')));
 const HtmlScreen = lazy(()=>(import('../HtmlScreen/HtmlScreen'))); 
 const VariablesToCamelCase = lazy(()=>(import('../VariablesToCamelCase/VariablesToCamelCase')));
+const StrStyleToObjStyle = lazy(()=>(import('../StrStyleToObjStyle/StrStyleToObjStyle')));
 
 export default class MainArea extends Component{
     constructor(props){
@@ -57,6 +58,7 @@ export default class MainArea extends Component{
                                 <Route path='/table-to-objects-array' component={(()=>(<TableToObjectsArray/>))}/>
                                 <Route path='/html-screen' component={(()=>(<HtmlScreen/>))}/>
                                 <Route path='/variables-to-camelCase' component={()=>(<VariablesToCamelCase/>)}/>
+                                <Route path='/str-style-to-obj-style' component={()=>(<StrStyleToObjStyle/>)}/>
                             </PageCover>
                         </Switch>
                     </Router>                    
